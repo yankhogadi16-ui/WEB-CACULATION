@@ -33,7 +33,12 @@
 <button onclick="vortex('sqrt(')">√</button>
 <button onclick="vortex('cos(')">cos</button>
 <button onclick="calculate()">=</button><br>
-
+<script>
+    function vortex(num){
+        const vortexShow = document.getElementById('calcdisplay');
+        vortexShow.value += num;
+    }
+</script>
     
 </body>
 </html>
