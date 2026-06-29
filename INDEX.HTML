@@ -38,6 +38,28 @@
         const vortexShow = document.getElementById('calcdisplay');
         vortexShow.value += num;
     }
+     function calculate(){
+        const display = document.getElementById('calcdisplay');
+        let expression = display.value;
+
+    
+        expression = expression.replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)");
+
+        expression = expression.replace(/sqrt\(/g, "Math.sqrt(");
+        expression = expression.replace(/cos\(/g, "Math.cos(");
+        expression = expression.replace(/tan\(/g, "Math.tan(");
+
+        try {
+            display.value = eval(expression);
+        } catch (e) {
+            display.value = "Error";
+        }
+    }
+
+    function solve(){
+        const variabro = document.getElementById('calcdisplay');
+        variabro.value = '';
+    }
 </script>
     
 </body>
